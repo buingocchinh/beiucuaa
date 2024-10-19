@@ -1,74 +1,54 @@
 body {
+    background-color: #ffccff; /* Màu nền hồng */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    height: 100vh; /* Chiều cao toàn màn hình */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #f0f0f0, #cce7ff); /* Nền chuyển màu */
-    animation: backgroundAnimation 5s infinite alternate; /* Hiệu ứng chuyển nền */
-}
-
-@keyframes backgroundAnimation {
-    0% {
-        background: linear-gradient(135deg, #f0f0f0, #cce7ff);
-    }
-    100% {
-        background: linear-gradient(135deg, #ffcccb, #ffeb3b); /* Chuyển đổi màu nền */
-    }
 }
 
 .heart-container {
     position: relative;
-    animation: pulse 1.5s infinite; /* Hiệu ứng nhịp đập cho trái tim */
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
 }
 
 .heart {
-    position: relative;
-    width: 200px;  /* Kích thước của trái tim */
-    height: 200px; /* Kích thước của trái tim */
-    background: linear-gradient(135deg, #ff5c8a, #ffcc5c); /* Nền trái tim màu gradient */
-    transform: rotate(0deg); /* Không xoay trái tim */
-    margin: 50px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng cho trái tim */
+    width: 100px; /* Kích thước trái tim */
+    height: 100px; /* Kích thước trái tim */
+    background-color: red; /* Màu trái tim */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    border-radius: 50%;
 }
 
 .heart::before,
 .heart::after {
     content: '';
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
     position: absolute;
-    width: 200px; /* Kích thước của hình tròn bên trái và bên phải */
-    height: 200px; /* Kích thước của hình tròn bên trái và bên phải */
-    background: linear-gradient(135deg, #ff5c8a, #ffcc5c); /* Nền trái tim màu gradient */
-    border-radius: 50%; /* Biến thành hình tròn */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng cho trái tim */
 }
 
 .heart::before {
-    top: -100px; /* Đặt hình tròn bên trái lên trên */
+    top: -50px; /* Đặt trái tim bên trên */
     left: 0;
 }
 
 .heart::after {
-    left: 100px; /* Đặt hình tròn bên phải sang bên phải */
+    left: 50px; /* Đặt trái tim bên phải */
     top: 0;
 }
 
-.heart-text {
-    position: absolute;
-    top: 50%; /* Đặt văn bản ở giữa chiều cao của trái tim */
-    left: 50%; /* Đặt văn bản ở giữa chiều rộng của trái tim */
-    transform: translate(-50%, -50%); /* Căn giữa văn bản */
-    font-size: 24px; /* Kích thước font chữ */
-    color: white; /* Màu chữ */
-    font-weight: bold; /* Đậm chữ */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Đổ bóng cho văn bản */
+h1 {
+    margin-top: 120px; /* Khoảng cách với trái tim */
+    color: #fff; /* Màu chữ */
+}
+
+p {
+    color: #fff; /* Màu chữ */
 }
