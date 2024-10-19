@@ -3,27 +3,27 @@ const container = document.getElementById('heartContainer');
 
 button.addEventListener('click', () => {
     const flowers = [];
-    const numberOfFlowers = 20; // Số lượng bông hoa tạo hình trái tim
-    const radius = 80; // Bán kính của hình trái tim
+    const numberOfFlowers = 40; // Tăng số lượng bông hoa
+    const radius = 150; // Tăng bán kính hình trái tim
 
     for (let i = 0; i < numberOfFlowers; i++) {
         const flower = document.createElement('div');
         flower.classList.add('flower');
 
-        // Tính toán vị trí bông hoa dựa trên hình trái tim
+        // Sử dụng công thức tạo hình trái tim
         const angle = (i / numberOfFlowers) * 2 * Math.PI;
-        const x = radius * Math.sin(angle) * Math.abs(Math.cos(angle));
-        const y = radius * Math.cos(angle) * Math.abs(Math.sin(angle));
+        const x = radius * (16 * Math.sin(angle) ** 3);
+        const y = -radius * (13 * Math.cos(angle) - 5 * Math.cos(2 * angle) - 2 * Math.cos(3 * angle) - Math.cos(4 * angle));
 
-        flower.style.left = `${100 + x}px`; // Cộng thêm 100 để di chuyển tâm ra giữa
-        flower.style.top = `${100 + y}px`;
+        flower.style.left = `${150 + x}px`; // Cộng thêm 150 để di chuyển tâm ra giữa
+        flower.style.top = `${150 + y}px`;
 
         container.appendChild(flower);
         flowers.push(flower);
 
-        // Loại bỏ bông hoa sau 1 giây
+        // Loại bỏ bông hoa sau 1.5 giây
         setTimeout(() => {
             container.removeChild(flower);
-        }, 1000);
+        }, 1500);
     }
 });
