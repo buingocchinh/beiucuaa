@@ -4,20 +4,41 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0; /* Màu nền của trang */
+    background: linear-gradient(135deg, #f0f0f0, #cce7ff); /* Nền chuyển màu */
+    animation: backgroundAnimation 5s infinite alternate; /* Hiệu ứng chuyển nền */
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #f0f0f0, #cce7ff);
+    }
+    100% {
+        background: linear-gradient(135deg, #ffcccb, #ffeb3b); /* Chuyển đổi màu nền */
+    }
 }
 
 .heart-container {
     position: relative;
+    animation: pulse 1.5s infinite; /* Hiệu ứng nhịp đập cho trái tim */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .heart {
     position: relative;
     width: 200px;  /* Kích thước của trái tim */
     height: 200px; /* Kích thước của trái tim */
-    background-color: pink; /* Màu nền trái tim */
-    transform: rotate(-45deg); /* Xoay trái tim */
+    background: linear-gradient(135deg, #ff5c8a, #ffcc5c); /* Nền trái tim màu gradient */
+    transform: rotate(0deg); /* Không xoay trái tim */
     margin: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng cho trái tim */
 }
 
 .heart::before,
@@ -26,8 +47,9 @@ body {
     position: absolute;
     width: 200px; /* Kích thước của hình tròn bên trái và bên phải */
     height: 200px; /* Kích thước của hình tròn bên trái và bên phải */
-    background-color: pink; /* Màu nền trái tim */
+    background: linear-gradient(135deg, #ff5c8a, #ffcc5c); /* Nền trái tim màu gradient */
     border-radius: 50%; /* Biến thành hình tròn */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng cho trái tim */
 }
 
 .heart::before {
@@ -48,4 +70,5 @@ body {
     font-size: 24px; /* Kích thước font chữ */
     color: white; /* Màu chữ */
     font-weight: bold; /* Đậm chữ */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Đổ bóng cho văn bản */
 }
