@@ -5,6 +5,7 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
+    overflow: hidden;
 }
 
 #heartButton {
@@ -16,6 +17,8 @@ body {
     color: white;
     border-radius: 5px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
 }
 
 #heartContainer {
@@ -24,17 +27,19 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    width: 300px; /* tăng kích thước vùng chứa */
+    height: 300px;
 }
 
 .flower {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 30px; /* tăng kích thước bông hoa */
+    height: 30px;
     background-color: pink;
     border-radius: 50%;
     opacity: 0;
     transform: scale(0);
-    animation: grow 1s ease-in-out forwards;
+    animation: grow 1.5s ease-in-out forwards; /* tăng thời gian hoạt hình */
 }
 
 @keyframes grow {
@@ -47,3 +52,4 @@ body {
         transform: scale(1);
     }
 }
+
