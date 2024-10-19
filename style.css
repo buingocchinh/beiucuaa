@@ -6,20 +6,23 @@ body {
     height: 100vh; /* Chiều cao toàn màn hình */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Căn giữa theo chiều dọc nhưng ở phần trên */
     flex-direction: column;
+    padding-top: 20px; /* Khoảng cách phía trên */
 }
 
+/* Bỏ đoạn mã CSS liên quan đến trái tim */
+/*
 .heart {
     width: 100px;
     height: 100px;
     background-color: red;
     position: absolute;
-    top: 20px; /* Vị trí cách cạnh trên */
-    left: 20px; /* Vị trí cách cạnh trái */
-    transform: rotate(-45deg); /* Xoay trái tim */
+    top: 20px; 
+    left: 20px; 
+    transform: rotate(-45deg);
     border-radius: 50%;
-    animation: heartbeat 1s infinite; /* Hiệu ứng nhấp nháy */
+    animation: heartbeat 1s infinite;
 }
 
 .heart::before,
@@ -41,9 +44,10 @@ body {
     left: 50px;
     top: 0;
 }
+*/
 
 h1 {
-    margin-top: 120px;
+    margin-top: 150px; /* Khoảng cách với trái tim */
     color: #fff;
 }
 
@@ -58,20 +62,9 @@ button {
     border: none;
     border-radius: 5px;
     background-color: #ff6699;
-    color: red;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s;
-button1 {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff6699;
-    color: black;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    
 }
 
 button:hover {
@@ -79,12 +72,11 @@ button:hover {
 }
 
 /* Hiệu ứng nhấp nháy */
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
+// @keyframes heartbeat {
+//     0%, 100% {
+//         transform: scale(1);
+//     }
+//     50% {
+//         transform: scale(1.1);
+//     }
+// }
