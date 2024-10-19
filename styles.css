@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Màu nền của trang */
+}
+
+.heart-container {
+    position: relative;
+}
+
+.heart {
+    position: relative;
+    width: 200px;  /* Kích thước của trái tim */
+    height: 200px; /* Kích thước của trái tim */
+    background-color: pink; /* Màu nền trái tim */
+    transform: rotate(-45deg); /* Xoay trái tim */
+    margin: 50px;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 200px; /* Kích thước của hình tròn bên trái và bên phải */
+    height: 200px; /* Kích thước của hình tròn bên trái và bên phải */
+    background-color: pink; /* Màu nền trái tim */
+    border-radius: 50%; /* Biến thành hình tròn */
+}
+
+.heart::before {
+    top: -100px; /* Đặt hình tròn bên trái lên trên */
+    left: 0;
+}
+
+.heart::after {
+    left: 100px; /* Đặt hình tròn bên phải sang bên phải */
+    top: 0;
+}
+
+.heart-text {
+    position: absolute;
+    top: 50%; /* Đặt văn bản ở giữa chiều cao của trái tim */
+    left: 50%; /* Đặt văn bản ở giữa chiều rộng của trái tim */
+    transform: translate(-50%, -50%); /* Căn giữa văn bản */
+    font-size: 24px; /* Kích thước font chữ */
+    color: white; /* Màu chữ */
+    font-weight: bold; /* Đậm chữ */
+}
