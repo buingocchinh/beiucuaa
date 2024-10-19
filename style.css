@@ -10,18 +10,14 @@ body {
     flex-direction: column;
 }
 
-.heart-container {
-    position: relative;
-}
-
 .heart {
     width: 100px;
     height: 100px;
     background-color: red;
     position: absolute;
-    top: 20px; /* Di chuyển trái tim lên phía trên */
-    left: 50%;
-    transform: translate(-50%, 0) rotate(-45deg); /* Căn giữa trái tim theo chiều ngang */
+    top: 20px; /* Vị trí cách cạnh trên */
+    left: 20px; /* Vị trí cách cạnh trái */
+    transform: rotate(-45deg); /* Xoay trái tim */
     border-radius: 50%;
     animation: heartbeat 1s infinite; /* Hiệu ứng nhấp nháy */
 }
