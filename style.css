@@ -19,9 +19,9 @@ body {
     height: 100px;
     background-color: red;
     position: absolute;
-    top: 50%;
+    top: 20px; /* Di chuyển trái tim lên phía trên */
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, 0) rotate(-45deg); /* Căn giữa trái tim theo chiều ngang */
     border-radius: 50%;
     animation: heartbeat 1s infinite; /* Hiệu ứng nhấp nháy */
 }
