@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Fade-In Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ff00b3; /* Nền màu hồng */
+            font-family: 'Arial', sans-serif;
+        }
+
+        .heart-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart {
+            position: relative;
+            width: 300px; /* Tăng kích thước trái tim */
+            height: 300px; /* Tăng kích thước trái tim */
+            background-color: #ff4e50;
+            background-image: linear-gradient(135deg, #ff4e50, #fc6a4c);
+            transform: rotate(-45deg) scale(1);
+            opacity: 0;
+            animation: fadeInScale 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: inherit;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -150px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 150px;
+        }
+        .heart-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px; /* Tăng kích thước chữ */
+            color: rgb(255, 0, 0);
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeInText 2.5s ease forwards;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                transform: rotate(-45deg) scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: rotate(-45deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart-container">
+        <div class="heart"></div>
+        <div class="heart-text">Chúc bé yêu 20/11 vui vẻ :33</div>
+    </div>
+
+</body>
+</html>
+
+
