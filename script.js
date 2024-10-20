@@ -1,3 +1,5 @@
+alert("Hello bé iu của a><"); // Hiển thị thông báo
+  });
 let countHeartOver = 0;
 
 let contentHTML = '';
